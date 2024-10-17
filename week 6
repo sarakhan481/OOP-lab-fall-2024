@@ -1,0 +1,152 @@
+Task 1
+Create a Player class with attributes like playerName and position.
+• Create a Team class that contains a list of Player objects.
+• Implement a method in the Team class to add players to the team and another method to display
+the team's players.
+• Demonstrate that even if the Team object is deleted, the Player objects can still exist
+independently (Aggregation relationship).
+
+class Player {
+    public String playerName;
+    public String position;
+
+    public Player(String playerName, String position) {
+        this.playerName = playerName;
+        this.position = position;
+    }
+
+   
+    public void displayDetails() {
+        System.out.println("Player Name: " + playerName + ", Position: " + position);
+    }
+}
+
+
+class Team {
+    public Player p1;
+    public Player p2;
+    public Player p3;
+    public int count;
+
+    public Team() {
+        count = 0;
+    }
+
+
+    public void addPlayer(Player player) {
+        if (count < 3) {
+            if (count == 0) p1 = player;
+            else if (count == 1) p2 = player;
+            else p3 = player;
+            count++;
+        } else {
+            System.out.println("Team is full. Cannot add more players.");
+        }
+    }
+public void displayPlayers() {
+        System.out.println("Team Players:");
+        if (p1 != null) p1.displayDetails();
+        if (p2 != null) p2.displayDetails();
+        if (p3 != null) p3.displayDetails();
+    }
+}
+
+
+public class Main {
+    public static void main(String[] args) {
+       
+        Player player1 = new Player("salman", "Forward");
+        Player player2 = new Player("Ali", "Defender");
+        Player player3 = new Player("Hamza", "Goalkeeper");
+
+        Team team = new Team();
+
+        
+        team.addPlayer(player1);
+        team.addPlayer(player2);
+        team.addPlayer(player3);
+
+       
+        team.displayPlayers();
+
+      
+        team = null;
+
+        System.out.println("Players after team deletion:");
+        player1.displayDetails();
+        player2.displayDetails();
+        player3.displayDetails();
+    }
+} 
+Task 2
+Create a CPU class, a RAM class, and a HardDrive class, each with attributes like brand and capacity.
+• Create a Computer class that contains these components as attributes.
+• In the Computer constructor, initialize the components.
+• Implement a method in the Computer class to display the details of all its components.
+• Demonstrate that if the Computer object is destroyed, its components cannot exist independently
+(Composition relationship).
+class CPU {
+    public String brand;
+    public String capacity;
+
+    public CPU(String brand, String capacity) {
+        this.brand = brand;
+        this.capacity = capacity;
+    }
+}
+class RAM {
+    public String brand;
+    public String capacity;
+
+    public RAM(String brand, String capacity) {
+        this.brand = brand;
+        this.capacity = capacity;
+    }
+}
+class HardDrive {
+    public String brand;
+    public String capacity;
+
+    public HardDrive(String brand, String capacity) {
+        this.brand = brand;
+        this.capacity = capacity;
+    }
+}
+class Computer {
+    public CPU cpu;
+    public RAM ram;
+    public HardDrive hardDrive;
+
+    public Computer(CPU cpu, RAM ram, HardDrive hardDrive) {
+        this.cpu = cpu;
+        this.ram = ram;
+        this.hardDrive = hardDrive;
+    }
+
+    public void displayComponents() {
+        System.out.println("CPU Brand: " + cpu.brand + ", Capacity: " + cpu.capacity);
+        System.out.println("RAM Brand: " + ram.brand + ", Capacity: " + ram.capacity);
+        System.out.println("Hard Drive Brand: " + hardDrive.brand + ", Capacity: " + hardDrive.capacity);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+       
+        CPU cpu = new CPU("dell", "2.4 GHz");
+        RAM ram = new RAM("hp", "16 GB");
+        HardDrive hardDrive = new HardDrive("apple", "1 TB");
+
+       
+        Computer computer = new Computer(cpu, ram, hardDrive);
+
+        
+        computer.displayComponents();
+
+        
+        computer = null;
+
+        
+    }
+}
+ 
