@@ -1,0 +1,105 @@
+Lab 04
+Task 1
+Write a Java program that:
+o Defines a Laptop class with an attribute brand.
+o The Laptop class should have a constructor that takes the laptop's brand as a parameter and
+initializes it.
+o Use the Scanner class to take the laptop's brand as input from the user.
+o The program should display the laptop's brand using a method in the Laptop class.
+import java.util.Scanner;
+
+
+
+class Laptop {
+  
+    private String brand;
+    
+    
+    public Laptop(String brand) {
+        this.brand = brand;
+    }
+    
+    public void displayBrand() {
+        System.out.println("Laptop brand: " + brand);
+    }
+
+   
+    public static void main(String[] args) {
+       
+        Scanner scanner = new Scanner(System.in);
+        
+        
+        System.out.print("Enter the brand of your laptop: ");
+        String brand = scanner.nextLine();
+        
+        
+        Laptop myLaptop = new Laptop(brand);
+        
+        
+        myLaptop.displayBrand();
+        
+        
+        scanner.close();
+    }
+}
+ 
+Task 2
+In this task, you’ll write a program that outputs your name using a combination of loops and conditional
+statements. You can use a 2D pattern (rows and columns) to simulate writing letters.
+• Example: (HIBA)
+MY NAME IS SARA.
+package namepattern;
+
+
+public class NamePattern {
+    public static void main(String[] args) {
+        int height = 7; 
+
+        
+        for (int row = 0; row < height; row++) {
+            for (int col = 0; col < height; col++) {
+                if ((row == 0 && col > 0) || (row == height / 2 && col > 0 && col < height - 1) ||
+                    (row == height - 1 && col < height - 1) || (col == 0 && row > 0 && row < height / 2) ||
+                    (col == height - 1 && row > height / 2 && row < height - 1)) {
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+            System.out.print("   "); 
+
+            
+            for (int col = 0; col < height; col++) {
+                if (col == 0 && row != 0 || col == height - 1 && row != 0 || row == 0 && col != 0 && col != height - 1 || row == height / 2) {
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+            System.out.print("   "); 
+
+            for (int col = 0; col < height; col++) {
+                if (col == 0 || (row == 0 && col < height - 1) || (row == height / 2 && col < height - 1) ||
+                    (col == height - 1 && row != 0 && row < height / 2) || (row - col == height / 2)) {
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+            System.out.print("   "); 
+
+            
+            for (int col = 0; col < height; col++) {
+                if (col == 0 && row != 0 || col == height - 1 && row != 0 || row == 0 && col != 0 && col != height - 1 || row == height / 2) {
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+
+           
+            System.out.println();
+        }
+    }
+}
+ 
