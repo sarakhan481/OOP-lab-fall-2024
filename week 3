@@ -1,0 +1,92 @@
+Sara khan 
+55256
+Task 1Write a program to declare an array of String and print all its elements using a for loop.
+package a;
+
+/**
+ *
+ * @author Riphah
+ */
+public class A {
+    public static void main(String[] args) {
+       
+        String[] s = {"copy", "book", "pencil"};
+
+        
+        for (int i = 0; i < s.length; i++) {
+            System.out.println(s[i]);
+        }
+    }
+}
+ 
+Task 2Create a program that checks if a given number is odd or even using if-else statements.
+package b;
+
+/**
+ *
+ * @author Riphah
+ */
+public class B {
+    public static void main(String[] args) {
+       
+        int number = 5; 
+
+        
+        if (number % 2 == 0) {
+            System.out.println(number + " is even.");
+        } else {
+            System.out.println(number + " is odd.");
+        }
+    }
+}
+ 
+
+Task 3Implement a while loop to print even numbers from 1-20.
+package c;
+
+/**
+ *
+ * @author Riphah
+ */
+public class C {
+    public static void main(String[] args) {
+        int number = 1; 
+        while (number <= 20) {
+            if (number % 2 == 0) { 
+                System.out.println(number); 
+            }
+            number++; 
+        }
+    }
+}
+ 
+Task 4Write a program to print the following pattern using nested loops:
+* * * * * *
+* * * * * *
+* * * * * *
+* * * * * *
+package d;
+
+/**
+ *
+ * @author Riphah
+ */
+public class D {
+    public static void main(String[] args) {
+        
+        int r = 4;
+        int c = 6;
+ for (int i = 0; i < r; i++) {
+            for (int j = 0; j < c; j++) {
+                System.out.print("* ");
+            }
+            System.out.println(); 
+        }
+    }
+}
+ 
+Task 5
+ Write a program to calculate the factorial of a hard-coded number using a while loop. 
+public class E {
+    public static void main(String[] args) {
+       
