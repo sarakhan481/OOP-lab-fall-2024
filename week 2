@@ -1,0 +1,115 @@
+task 1
+package s1;
+
+class S1 {
+    String name;
+    String city;
+    int age;
+
+
+    void displayInfo() {
+        System.out.println("Name: " + name + ", City: " + city + ", Age: " + age);
+    }
+
+    public static void main(String[] args) {
+        
+        S1 s1 = new S1();
+        S1 s2 = new S1();
+
+     
+        s1.name = "afrah";
+        s1.city = "peshwar";
+        s1.age = 17;
+
+        s2.name = "sara";
+        s2.city = "swat";
+        s2.age = 40;
+
+        
+        s1.displayInfo();  
+        s2.displayInfo();  
+    }
+}
+ 
+task 2
+package computerr;
+class Computerr {
+    String name;
+    String config;
+    int cost;
+    String os;
+
+    
+    void displayDetails() {
+        System.out.println("The company name is " + name);
+        System.out.println("The configuration is " + config);
+        System.out.println("Its Cost is " + cost);
+        System.out.println("Its operating System is " + os);
+    }
+
+    public static void main(String[] args) {
+       
+        Computerr comp = new Computerr();
+
+       
+        comp.name = "Apple";
+        comp.config = "i5";
+        comp.cost = 50000;
+        comp.os = "IOS";
+
+        
+        comp.displayDetails();
+    }
+}
+ 
+task 3
+class Areaa{
+    double length;
+    int width;
+
+   
+    void calculateArea() {
+        double area = length * width;
+        System.out.println("Area: " + area);
+    }
+
+    public static void main(String[] args) {
+        
+        Areaa areaObj = new Areaa();
+
+       
+        areaObj.length = 2.66;  
+        areaObj.width = 56;   
+
+        
+        areaObj.calculateArea();  
+    }
+}
+ 
+task 4
+package finalnumber;
+
+/**
+ *
+ * @author administator
+ */
+public class Finalnumber {
+    public static void main(String[] args) {
+       
+        int num1 = 178;
+        int num2 = 90;
+        int num3 = 189;
+
+        
+        int max;
+        if (num1 >= num2 && num1 >= num3) {
+            max = num1;
+        } else if (num2 >= num1 && num2 >= num3) {
+            max = num2;
+        } else {
+            max = num3;
+        }
+
+       
+        System.out.println("The maximum number is: " + max);
+    }
